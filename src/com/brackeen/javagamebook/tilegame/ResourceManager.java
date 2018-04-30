@@ -405,7 +405,9 @@ public class ResourceManager {
         for (int i=0; i<4; i++) {
         	imageIndex=0;
             playerAnim[i] = createPlayerAnim(
-                images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+                images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
+                images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
+                images[i][imageIndex++], images[i][imageIndex++]);
             for(int x=0; x<enemies;x++)
             	if(s.getArchType(x).compareTo("grub")==0)
                     enemyAnim[x][i] = createGrubAnim(
@@ -438,7 +440,64 @@ public class ResourceManager {
             	if(s.getArchType(x).compareTo("balloon")==0)
             		enemyAnim[x][i]=createFlyAnim(
             				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
-        }
+            	//create new enemies anim here
+            	else 
+            	if(s.getArchType(x).compareTo("superfly")==0)
+            		enemyAnim[x][i]=createFlyAnim(
+            				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("lazyfly")==0)
+                		enemyAnim[x][i]=createFlyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("slug")==0)
+                		enemyAnim[x][i]=createMonkeyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("thugglide")==0)
+                		enemyAnim[x][i]=createMonkeyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("firegiant")==0)
+                		enemyAnim[x][i]=createMonkeyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("icegiant")==0)
+                		enemyAnim[x][i]= createIceGiantAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++],
+        						images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++],
+								images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++],
+								images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("spider")==0)
+                		enemyAnim[x][i]=createMonkeyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("redDragon")==0)
+                		enemyAnim[x][i]=createFlyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("wyvern")==0)
+                		enemyAnim[x][i]=createFlyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("zombie")==0)
+                		enemyAnim[x][i]=createMonkeyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+               	else 
+                	if(s.getArchType(x).compareTo("demon")==0)
+                		enemyAnim[x][i]=createFlyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("saber")==0)
+                		enemyAnim[x][i]=createAlienAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("alien")==0)
+                		enemyAnim[x][i]=createAlienAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+
+    }
 
         // create creature sprites
         playerSprite = new Player(playerAnim[0], playerAnim[1],
@@ -480,7 +539,60 @@ public class ResourceManager {
             if(s.getArchType(x).compareTo("balloon")==0)
             	enemySprites[x]=new Balloon(enemyAnim[x][0], enemyAnim[x][1],
             			enemyAnim[x][2], enemyAnim[x][3]);
-    }
+        	//create new enemies here
+            else
+            if(s.getArchType(x).compareTo("superfly")==0)
+            	enemySprites[x]=new SuperFly(enemyAnim[x][0], enemyAnim[x][1],
+            			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("lazyfly")==0)
+                	enemySprites[x]=new LazyFly(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("slug")==0)
+                	enemySprites[x]=new Slug(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("thugglide")==0)
+                	enemySprites[x]=new ThugGlide(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("firegiant")==0)
+                	enemySprites[x]=new FireGiant(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("icegiant")==0)
+                	enemySprites[x]=new IceGiant(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("spider")==0)
+                	enemySprites[x]=new Spider(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("wyvern")==0)
+                	enemySprites[x]=new Wyvern(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("redDragon")==0)
+                	enemySprites[x]=new RedDragon(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("zombie")==0)
+                	enemySprites[x]=new Zombie(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("demon")==0)
+                	enemySprites[x]=new Demon(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("saber")==0)
+                	enemySprites[x]=new Saber(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("alien")==0)
+                	enemySprites[x]=new Alien(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+       }
     
     public String levelBackground()
     {	//return the image name of the background for the current map
@@ -644,7 +756,8 @@ public class ResourceManager {
     
     
     private Animation createPlayerAnim(Image player1,
-        Image player2, Image player3)
+        Image player2, Image player3, Image player4, Image player5,
+        Image player6, Image player7, Image player8 )
     {
     	if(CodeReflection.isTracing() && TilegamePackageTracingEnabled.getTilegamePackageTracingEnabledInstance().isEnabled()) {
         	if(CodeReflection.getAbstactionLevel()>=0)
@@ -657,10 +770,12 @@ public class ResourceManager {
         Animation anim = new Animation();
         anim.addFrame(player1, 250);
         anim.addFrame(player2, 150);
-        anim.addFrame(player1, 150);
-        anim.addFrame(player2, 150);
-        anim.addFrame(player3, 200);
-        anim.addFrame(player2, 150);
+        anim.addFrame(player3, 150);
+        anim.addFrame(player4, 150);
+        anim.addFrame(player5, 200);
+        anim.addFrame(player6, 150);
+        anim.addFrame(player7, 150);
+        anim.addFrame(player8, 150);
         return anim;
     }
 
@@ -723,7 +838,61 @@ public class ResourceManager {
             anim.addFrame(img3, 50);
             return anim;
         }
-    
+    //TODO Create animation sequence for creature
+    private Animation createIceGiantAnim(Image img1, Image img2,
+            Image img3, Image img4, Image img5, Image img6, Image img7,
+            Image img8, Image img9, Image img10)
+        {
+    	if(CodeReflection.isTracing() && TilegamePackageTracingEnabled.getTilegamePackageTracingEnabledInstance().isEnabled()) {
+        	if(CodeReflection.getAbstactionLevel()>=0)
+        	{//check to make sure it's this level of abstraction
+        		e.fillInStackTrace();		
+        		CodeReflection.registerMethod(e.getStackTrace()[0].getClassName(),
+        								e.getStackTrace()[0].getMethodName());
+        	}
+    	}
+            Animation anim = new Animation();
+            //Normal state
+            anim.addFrame(img1, 250);
+            //Up anim state
+            anim.addFrame(img2, 250);
+            anim.addFrame(img3, 250);
+            //down anim state
+            anim.addFrame(img4, 250);
+            anim.addFrame(img5, 250);
+            //Up anim state
+            anim.addFrame(img6, 250);
+            //Normal state
+            anim.addFrame(img7, 250);
+            //down anim state
+            anim.addFrame(img8, 250);          
+            //Up anim state
+            anim.addFrame(img9, 250);
+            //Normal state
+            anim.addFrame(img10, 250);
+            return anim;
+        } 
+    //TODO Create animation sequence for creature
+    private Animation createAlienAnim(Image img1, Image img2,
+            Image img3)
+        {
+    	if(CodeReflection.isTracing() && TilegamePackageTracingEnabled.getTilegamePackageTracingEnabledInstance().isEnabled()) {
+        	if(CodeReflection.getAbstactionLevel()>=0)
+        	{//check to make sure it's this level of abstraction
+        		e.fillInStackTrace();		
+        		CodeReflection.registerMethod(e.getStackTrace()[0].getClassName(),
+        								e.getStackTrace()[0].getMethodName());
+        	}
+    	}
+            Animation anim = new Animation();
+            //Normal state
+            anim.addFrame(img1, 150);
+            //Up anim state
+            anim.addFrame(img2, 150);
+            //down anim state
+            anim.addFrame(img3, 150);
+            return anim;
+        }
     private Animation createBossAnim(Image img1, Image img2,
             Image img3)
         {

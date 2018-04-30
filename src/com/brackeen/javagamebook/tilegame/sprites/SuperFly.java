@@ -24,6 +24,17 @@ public class SuperFly extends Fly{
     	}
     	//We don't apply gravity to the fly
         flying = true;
+        //The fly is following the hero
+        trackPlayer = true;
+        //Set Vertical speed
+        setVelocityY(0.15f);
+        
+        //Set Horizontal Responce Time
+        setHorizontalResponceTime(225.0f);
+        
+        //Set Vertical Responce Time
+        setVerticalResponceTime(0.5f);
+		
 
     }
 
@@ -37,7 +48,7 @@ public class SuperFly extends Fly{
         								e.getStackTrace()[0].getMethodName());
         	}
     	}
-        return 0.4f * enemySpeedMultiplier;
+        return 0.8f * enemySpeedMultiplier;
     }
 
 
@@ -53,7 +64,7 @@ public class SuperFly extends Fly{
     	}
         return isAlive() && super.isFlying();
     }
-
 }
+
 
 

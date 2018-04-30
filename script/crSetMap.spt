@@ -8,16 +8,16 @@
 ####################################
 #Maps themselves
 1 >CRset/hello.txt
->background.png
+>background3.png
 >CRSet/tetrisb.mid
 2 >CRset/maze1.txt
->background.png
+>background3.png
 >CRSet/tetrisb.mid
 3 >CRset/go.txt
->background.png
+>background3.png
 >CRSet/tetrisb.mid
 4 >CRset/dontfall.txt
->background.png
+>background3.png
 >CRSet/smb3hammer.mid
 5 >CRset/items.txt
 >background2.png

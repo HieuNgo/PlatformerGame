@@ -24,7 +24,9 @@ public class GameManager extends GameCore {
 	
     public static void main(String[] args) {
     	
+    	//make a start menu
     	startMenu = new StartMenu();
+    	//make the start menu visible
     	startMenu.setVisible(true);
     
     	while(!exitGame)
@@ -37,10 +39,12 @@ public class GameManager extends GameCore {
 	        {
 	        		
 	        }
-	       
+	        
 	        if(runGame)
 	        {
+	        	//make startMenu invisible
 	        	startMenu.setVisible(false);
+	        	//run gameManager.  NOTE: go see gameManager.run()
 	        	gameManager.run();
 	        	runGame = false;
 	        	
@@ -752,8 +756,7 @@ public class GameManager extends GameCore {
         // check each tile for a collision
         for (int x=fromTileX; x<=toTileX; x++) {
             for (int y=fromTileY; y<=toTileY; y++) {
-                if (x < 0 || x >= map.getWidth() ||
-                    map.getTile(x, y) != null)
+                if (x < 0 || x >= map.getWidth() || map.getTile(x, y) != null)
                 {
                     // collision found, return the tile
                     pointCache.setLocation(x, y);
@@ -801,6 +804,7 @@ public class GameManager extends GameCore {
         int s2y = Math.round(s2.getY());
 
         // check if the two sprites' boundaries intersect
+        //PROBLEM here???
         return (s1x < s2x + s2.getWidth() &&
             s2x < s1x + s1.getWidth() &&
             s1y < s2y + s2.getHeight() &&
@@ -957,7 +961,7 @@ public class GameManager extends GameCore {
         
         if(creature.isTrackingPlayer()) 
         {
-        	if((creature.isIntelligent())/*&&(Math.abs(creature.getX()-player.getX())<200)*/
+        	if((creature.isIntelligent())&&(Math.abs(creature.getX()-player.getX())<200)//change here
         			&&(!player.isOnGround()))
         	{
         		if(player.getX()<creature.getX())
@@ -1171,6 +1175,8 @@ public class GameManager extends GameCore {
             else {
             	if((hitClock==0)&&(!badguy.isHelper())){
             		if(!INVINCIBLE)	//If you're not invincible...
+            			//need code here
+            			//health--;
 	            	if(health==0)
 	            	{	//player has run out of health, he will die
 	            		// player dies!

@@ -116,6 +116,6 @@ public class OptionsMenu extends JFrame{
 		
 		this.setSize(400,400);
     	this.add(optionsContainer);
-    	this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+    	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }

@@ -172,7 +172,7 @@ public class ScreenManager {
     public void setWindowedScreen(DisplayMode displayMode) {
       this.fullScreen = false;
       frame = new JFrame();
-      frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
       frame.setVisible(true);
       frame.setSize(displayMode.getWidth(), displayMode.getHeight());
@@ -202,10 +202,10 @@ public class ScreenManager {
      */
     public void setToolWindow(DisplayMode displayMode) {
     	this.toolFrame = ToolFrame.getToolFrameInstance();
-//    	this.toolFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	this.toolFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	this.toolFrame.setVisible(true);
-//    	this.toolFrame.setDefaultCloseOperation(this.toolFrame.DISPOSE_ON_CLOSE);
-//    	this.toolFrame.setSize(displayMode.getWidth()-200, displayMode.getHeight());
+    	this.toolFrame.setDefaultCloseOperation(this.toolFrame.DISPOSE_ON_CLOSE);
+    	this.toolFrame.setSize(displayMode.getWidth()-200, displayMode.getHeight());
     	this.toolFrame.setLocation(800, 0);
 //    	this.toolScreen = true;
     }
