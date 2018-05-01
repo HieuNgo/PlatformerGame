@@ -12,10 +12,10 @@
 # > denotes the name of the picture
 ####################################
 #Total Enemies/Helpers
-25
+26
 ####################################
 #Total Sprite Images (including player sprites)
-110
+113
 ####################################
 #Player
 >m1.png
@@ -232,3 +232,7 @@ spirit
 ####################################
 ####################################
 #z
+exgirlfriend
+>exgirlfriend1.png
+>exgirlfriend2.png
+>exgirlfriend3.png

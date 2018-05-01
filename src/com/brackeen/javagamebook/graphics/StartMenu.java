@@ -49,7 +49,7 @@ public class StartMenu extends JFrame{
     	icon = new ImageIcon("images/heavendraft.png");
     	 
 		JPanel panel = new JPanel()
-		{
+		{    	
 			protected void paintComponent(Graphics g)
 			{
 				g.drawImage(icon.getImage(), 0, 0, null);
@@ -57,11 +57,13 @@ public class StartMenu extends JFrame{
 			}
 		};
 		panel.setOpaque( false );
+
 		panel.setPreferredSize( new Dimension(400, 400) );
 		
 		scrollPane = new JScrollPane( panel );
 		getContentPane().add( scrollPane );
  
 		panel.add(buttonPanel);
+		panel.setLocation(HEIGHT/2, WIDTH/2);
 	}
 }

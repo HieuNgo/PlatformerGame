@@ -258,7 +258,7 @@ public class ResourceManager {
                 }
 
                 // check if the char represents a sprite
-                else if (ch == 'o') {
+                else if (ch == '%') {
                     addSprite(newMap, coinSprite, x, y);
                 }
                 else if (ch == '!') {
@@ -520,7 +520,10 @@ public class ResourceManager {
                 		enemyAnim[x][i]= createSpiritAnim(
                 				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
                 				images[i][imageIndex++], images[i][imageIndex++]);
-
+            	else
+                    if(s.getArchType(x).compareTo("exgirlfriend")==0)
+                        enemyAnim[x][i]=createMonkeyAnim(
+                                images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
     }
 
         // create creature sprites
@@ -632,7 +635,11 @@ public class ResourceManager {
                 if(s.getArchType(x).compareTo("spirit")==0)
                 	enemySprites[x]=new Spirit(enemyAnim[x][0], enemyAnim[x][1],
                 			enemyAnim[x][2], enemyAnim[x][3]);
-       }
+            else
+                if(s.getArchType(x).compareTo("ExGirlfriend")==0)
+                    enemySprites[x]=new ExGirlfriend(enemyAnim[x][0], enemyAnim[x][1],
+                            enemyAnim[x][2], enemyAnim[x][3]);
+        }
     
     public String levelBackground()
     {	//return the image name of the background for the current map
@@ -808,15 +815,15 @@ public class ResourceManager {
         	}
     	}
         Animation anim = new Animation();
-        anim.addFrame(player1, 250);
-        anim.addFrame(player2, 250);
-        anim.addFrame(player3, 250);
-        anim.addFrame(player4, 250);
-        anim.addFrame(player5, 250);
-        anim.addFrame(player6, 250);
-        anim.addFrame(player7, 250);
-        anim.addFrame(player8, 250);
-        anim.addFrame(player9, 250);
+        anim.addFrame(player1, 200);
+        anim.addFrame(player2, 200);
+        anim.addFrame(player3, 200);
+        anim.addFrame(player4, 200);
+        anim.addFrame(player5, 200);
+        anim.addFrame(player6, 200);
+        anim.addFrame(player7, 200);
+        anim.addFrame(player8, 200);
+        anim.addFrame(player9, 200);
         return anim;
     }
 
