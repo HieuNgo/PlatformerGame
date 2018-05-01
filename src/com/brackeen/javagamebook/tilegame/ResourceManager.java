@@ -407,7 +407,7 @@ public class ResourceManager {
             playerAnim[i] = createPlayerAnim(
                 images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
                 images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
-                images[i][imageIndex++], images[i][imageIndex++]);
+                images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
             for(int x=0; x<enemies;x++)
             	if(s.getArchType(x).compareTo("grub")==0)
                     enemyAnim[x][i] = createGrubAnim(
@@ -496,6 +496,30 @@ public class ResourceManager {
                 	if(s.getArchType(x).compareTo("alien")==0)
                 		enemyAnim[x][i]=createAlienAnim(
                 				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("dragon")==0)
+                		enemyAnim[x][i]=createDragonAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++],
+                				images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("boku")==0)
+                		enemyAnim[x][i]=createBokuAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
+                				images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("darkangel")==0)
+                		enemyAnim[x][i]=createFlyAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++]);
+            	else 
+                	if(s.getArchType(x).compareTo("spirit")==0)
+                		enemyAnim[x][i]= createSpiritAnim(
+                				images[i][imageIndex++], images[i][imageIndex++], images[i][imageIndex++], 
+                				images[i][imageIndex++], images[i][imageIndex++]);
 
     }
 
@@ -591,6 +615,22 @@ public class ResourceManager {
             else
                 if(s.getArchType(x).compareTo("alien")==0)
                 	enemySprites[x]=new Alien(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("dragon")==0)
+                	enemySprites[x]=new Dragon(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("boku")==0)
+                	enemySprites[x]=new Boku(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("darkangel")==0)
+                	enemySprites[x]=new DarkAngel(enemyAnim[x][0], enemyAnim[x][1],
+                			enemyAnim[x][2], enemyAnim[x][3]);
+            else
+                if(s.getArchType(x).compareTo("spirit")==0)
+                	enemySprites[x]=new Spirit(enemyAnim[x][0], enemyAnim[x][1],
                 			enemyAnim[x][2], enemyAnim[x][3]);
        }
     
@@ -757,7 +797,7 @@ public class ResourceManager {
     
     private Animation createPlayerAnim(Image player1,
         Image player2, Image player3, Image player4, Image player5,
-        Image player6, Image player7, Image player8 )
+        Image player6, Image player7, Image player8, Image player9 )
     {
     	if(CodeReflection.isTracing() && TilegamePackageTracingEnabled.getTilegamePackageTracingEnabledInstance().isEnabled()) {
         	if(CodeReflection.getAbstactionLevel()>=0)
@@ -769,13 +809,14 @@ public class ResourceManager {
     	}
         Animation anim = new Animation();
         anim.addFrame(player1, 250);
-        anim.addFrame(player2, 150);
-        anim.addFrame(player3, 150);
-        anim.addFrame(player4, 150);
-        anim.addFrame(player5, 200);
-        anim.addFrame(player6, 150);
-        anim.addFrame(player7, 150);
-        anim.addFrame(player8, 150);
+        anim.addFrame(player2, 250);
+        anim.addFrame(player3, 250);
+        anim.addFrame(player4, 250);
+        anim.addFrame(player5, 250);
+        anim.addFrame(player6, 250);
+        anim.addFrame(player7, 250);
+        anim.addFrame(player8, 250);
+        anim.addFrame(player9, 250);
         return anim;
     }
 
@@ -870,6 +911,104 @@ public class ResourceManager {
             anim.addFrame(img9, 250);
             //Normal state
             anim.addFrame(img10, 250);
+            return anim;
+        } 
+    	//TODO Create animation sequence for creature
+    	private Animation createSpiritAnim(Image img1, Image img2,
+            Image img3, Image img4, Image img5)
+        {
+    	if(CodeReflection.isTracing() && TilegamePackageTracingEnabled.getTilegamePackageTracingEnabledInstance().isEnabled()) {
+        	if(CodeReflection.getAbstactionLevel()>=0)
+        	{//check to make sure it's this level of abstraction
+        		e.fillInStackTrace();		
+        		CodeReflection.registerMethod(e.getStackTrace()[0].getClassName(),
+        								e.getStackTrace()[0].getMethodName());
+        	}
+    	}
+            Animation anim = new Animation();
+            //Normal state
+            anim.addFrame(img1, 250);
+            //Up anim state
+            anim.addFrame(img2, 250);
+            anim.addFrame(img3, 250);
+            //down anim state
+            anim.addFrame(img4, 250);
+            anim.addFrame(img5, 250);
+            return anim;
+        } 
+    //TODO Create animation sequence for creature
+    private Animation createDragonAnim(Image img1, Image img2,
+            Image img3, Image img4, Image img5, Image img6, Image img7,
+            Image img8)
+        {
+    	if(CodeReflection.isTracing() && TilegamePackageTracingEnabled.getTilegamePackageTracingEnabledInstance().isEnabled()) {
+        	if(CodeReflection.getAbstactionLevel()>=0)
+        	{//check to make sure it's this level of abstraction
+        		e.fillInStackTrace();		
+        		CodeReflection.registerMethod(e.getStackTrace()[0].getClassName(),
+        								e.getStackTrace()[0].getMethodName());
+        	}
+    	}
+            Animation anim = new Animation();
+            //Normal state
+            anim.addFrame(img1, 150);
+            //Up anim state
+            anim.addFrame(img2, 150);
+            anim.addFrame(img3, 150);
+            //down anim state
+            anim.addFrame(img4, 150);
+            anim.addFrame(img5, 150);
+            //Up anim state
+            anim.addFrame(img6, 150);
+            //Normal state
+            anim.addFrame(img7, 150);
+            //down anim state
+            anim.addFrame(img8, 150);          
+            return anim;
+        }
+    //TODO Create animation sequence for creature
+    private Animation createBokuAnim(Image img1, Image img2,
+            Image img3, Image img4, Image img5, Image img6, Image img7,
+            Image img8, Image img9, Image img10, Image img11, Image img12,
+            Image img13, Image img14, Image img15, Image img16)
+        {
+    	if(CodeReflection.isTracing() && TilegamePackageTracingEnabled.getTilegamePackageTracingEnabledInstance().isEnabled()) {
+        	if(CodeReflection.getAbstactionLevel()>=0)
+        	{//check to make sure it's this level of abstraction
+        		e.fillInStackTrace();		
+        		CodeReflection.registerMethod(e.getStackTrace()[0].getClassName(),
+        								e.getStackTrace()[0].getMethodName());
+        	}
+    	}
+            Animation anim = new Animation();
+            //Normal state
+            anim.addFrame(img1, 150);
+            //Up anim state
+            anim.addFrame(img2, 150);
+            anim.addFrame(img3, 150);
+            //down anim state
+            anim.addFrame(img4, 150);
+            anim.addFrame(img5, 150);
+            //Up anim state
+            anim.addFrame(img6, 150);
+            //Normal state
+            anim.addFrame(img7, 150);
+            //down anim state
+            anim.addFrame(img8, 150);          
+            //Up anim state
+            anim.addFrame(img9, 150);
+            //Normal state
+            anim.addFrame(img10, 150);
+            //Normal state
+            anim.addFrame(img11, 150);
+            //Up anim state
+            anim.addFrame(img12, 150);
+            anim.addFrame(img13, 150);
+            //down anim state
+            anim.addFrame(img14, 150);
+            anim.addFrame(img15, 150);
+            //Up anim state
+            anim.addFrame(img16, 150);
             return anim;
         } 
     //TODO Create animation sequence for creature

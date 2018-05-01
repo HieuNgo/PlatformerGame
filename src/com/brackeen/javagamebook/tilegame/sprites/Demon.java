@@ -22,6 +22,7 @@ public class Demon extends Creature {
         								e.getStackTrace()[0].getMethodName());
         	}
     	}
+    	health = 4;
         flying = true;
     }
 

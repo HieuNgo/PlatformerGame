@@ -48,7 +48,7 @@ public class SuperFly extends Fly{
         								e.getStackTrace()[0].getMethodName());
         	}
     	}
-        return 0.8f * enemySpeedMultiplier;
+        return 0.4f * enemySpeedMultiplier;
     }
 
 

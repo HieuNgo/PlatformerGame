@@ -18,7 +18,7 @@ public class Saber extends Creature {
 	private static final int MILI_PER_SECOND = 1000; 
 	//TODO set a jump interval to only jump after a certain number of seconds
 	// have elapsed.
-	private long initJumpInterval = 2 * MILI_PER_SECOND; 
+	private long initJumpInterval = 4 * MILI_PER_SECOND; 
 	private long jumpInterval = initJumpInterval;
 //    private Throwable e = new Throwable();
 	
@@ -55,7 +55,7 @@ public class Saber extends Creature {
         								e.getStackTrace()[0].getMethodName());
         	}
     	}
-        return 0.15f * enemySpeedMultiplier;
+        return 0.2f * enemySpeedMultiplier;
     }
     
 

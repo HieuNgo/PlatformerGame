@@ -22,7 +22,15 @@ public class Alien extends Creature {
         								e.getStackTrace()[0].getMethodName());
         	}
     	}
-    	health =10;
+    	health = 3;
+    	trackPlayer = true;
+        //Sleep a short while so the two different generates will be different
+        try{
+        	Thread.sleep(10);
+        }catch(Exception e)
+		{
+        	System.out.println("Thread Sleep failed in RandomFly constructor");
+        };
     }
 
 

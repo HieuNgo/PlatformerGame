@@ -13,7 +13,7 @@ import com.brackeen.javagamebook.codereflection.*;
  * @author danielsd
  * Daniels.Douglas@gmail.com
  */
-public class ThugGlide extends Creature {
+public class ThugGlide extends Monkey {
 
 	private static final int MILI_PER_SECOND = 1000; 
 	//TODO set a jump interval to only jump after a certain number of seconds
@@ -44,20 +44,6 @@ public class ThugGlide extends Creature {
 		
 	}
 	
-	
-	//TODO Set how fast you want the monkey to move.
-    public float getMaxSpeed() {
-    	if(CodeReflection.isTracing() && SpritesPackageTracingEnabled.getSpritesPackageTracingEnabledInstance().isEnabled()) {
-        	if(CodeReflection.getAbstactionLevel()>=2)
-        	{//check to make sure it's this level of abstraction
-        		e.fillInStackTrace();		
-        		CodeReflection.registerMethod(e.getStackTrace()[0].getClassName(),
-        								e.getStackTrace()[0].getMethodName());
-        	}
-    	}
-        return 0.15f * enemySpeedMultiplier;
-    }
-    
 
     
     //TODO Extend the update method to provide new creature behavior

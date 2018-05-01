@@ -6,7 +6,7 @@ import com.brackeen.javagamebook.codereflection.*;
 /**
     A Fly is a Creature that fly slowly in the air.
 */
-public class Wyvern extends Creature {
+public class Wyvern extends Fly {
 
 //    private Throwable e = new Throwable();
     
@@ -26,22 +26,13 @@ public class Wyvern extends Creature {
         flying = true;
     }
 
-
-    public float getMaxSpeed() {
-    	if(CodeReflection.isTracing() && SpritesPackageTracingEnabled.getSpritesPackageTracingEnabledInstance().isEnabled()) {
-        	if(CodeReflection.getAbstactionLevel()>=2)
-        	{//check to make sure it's this level of abstraction
-        		e.fillInStackTrace();		
-        		CodeReflection.registerMethod(e.getStackTrace()[0].getClassName(),
-        								e.getStackTrace()[0].getMethodName());
-        	}
-    	}
-        return 0.2f * enemySpeedMultiplier;
-    }
-
-
-    public boolean isFlying() {
+    public void update(long elapsedTime) 
+    {//Override the call to update
     	
+		// Call super to maintain animation behavior
+		super.update(elapsedTime);
+		
+		//Code Tracing
     	if(CodeReflection.isTracing() && SpritesPackageTracingEnabled.getSpritesPackageTracingEnabledInstance().isEnabled()) {
         	if(CodeReflection.getAbstactionLevel()>=4)
         	{//check to make sure it's this level of abstraction
@@ -50,7 +41,13 @@ public class Wyvern extends Creature {
         								e.getStackTrace()[0].getMethodName());
         	}
     	}
-        return isAlive() && super.isFlying();
-    }
-
+    	
+        if (!onGround && isAlive()) 
+        {
+            //onGround = false;
+        	setHealth(3);
+            setVelocityX(0.2f * enemySpeedMultiplier);
+            setVelocityY(0.1f * enemySpeedMultiplier);
+        }
+	}
 }

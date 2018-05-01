@@ -12,10 +12,10 @@
 # > denotes the name of the picture
 ####################################
 #Total Enemies/Helpers
-21
+25
 ####################################
 #Total Sprite Images (including player sprites)
-77
+110
 ####################################
 #Player
 >m1.png
@@ -26,6 +26,7 @@
 >m6.png
 >m7.png
 >m8.png
+>m9.png
 ####################################
 #Enemies
 # archtype followed by images
@@ -86,9 +87,9 @@ balloon
 ####################################
 #i
 superfly
->demon1.png
->demon2.png
->demon3.png
+>bat1.png
+>bat2.png
+>bat3.png
 ####################################
 ####################################
 #j
@@ -183,15 +184,51 @@ alien
 ####################################
 ####################################
 #v
+dragon
+>dragon1.png
+>dragon2.png
+>dragon3.png
+>dragon4.png
+>dragon5.png
+>dragon6.png
+>dragon7.png
+>dragon8.png
 ####################################
 ####################################
 #w
+boku
+>p1.png
+>p2.png
+>p3.png
+>p4.png
+>p5.png
+>p6.png
+>p7.png
+>p8.png
+>p9.png
+>p10.png
+>p11.png
+>p12.png
+>p13.png
+>p14.png
+>p15.png
+>p16.png
 ####################################
 ####################################
 #x
+darkangel
+>darkangel1.png
+>darkangel2.png
+>darkangel3.png
 ####################################
 ####################################
 #y
+spirit
+>spirit1.png
+>spirit2.png
+>spirit3.png
+>spirit4.png
+>spirit5.png
 ####################################
 ####################################
 #z
