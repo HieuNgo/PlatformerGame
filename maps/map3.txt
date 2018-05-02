@@ -13,11 +13,11 @@
 #   d	    Boss Guy 
 #   0       Warp
                                                                  
-                                                           o     o
-                                                     o      o    o
-                       o o o        c o o       o     o      o 
-                      IIIIIII      III           o     o         b
-                                          c       o        b
+                                                           %     %
+                                                     %      %    %
+                       % % %        c % %       %    %      % 
+                      IIIIIII      III           %     %         b
+                                          c       %        b
           c c  c c c              b   EF            bEF   c
          c       EF                  EGD    c    c  EGD
   ^     EF  a    CD      ca         EGAD  0^^^^^   EGAD     d

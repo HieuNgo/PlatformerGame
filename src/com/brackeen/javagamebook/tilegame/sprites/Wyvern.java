@@ -24,6 +24,13 @@ public class Wyvern extends Fly {
     	}
     	health = 3;
         flying = true;
+        trackPlayer = true;
+
+        //Set Horizontal Responce Time
+        setHorizontalResponceTime(225.0f);
+        
+        //Set Vertical Responce Time
+        setVerticalResponceTime(0.5f);
     }
 
     public void update(long elapsedTime) 

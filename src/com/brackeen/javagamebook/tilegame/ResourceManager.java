@@ -636,7 +636,7 @@ public class ResourceManager {
                 	enemySprites[x]=new Spirit(enemyAnim[x][0], enemyAnim[x][1],
                 			enemyAnim[x][2], enemyAnim[x][3]);
             else
-                if(s.getArchType(x).compareTo("ExGirlfriend")==0)
+                if(s.getArchType(x).compareTo("exgirlfriend")==0)
                     enemySprites[x]=new ExGirlfriend(enemyAnim[x][0], enemyAnim[x][1],
                             enemyAnim[x][2], enemyAnim[x][3]);
         }
@@ -877,13 +877,11 @@ public class ResourceManager {
     	}
             Animation anim = new Animation();
             //Normal state
-            anim.addFrame(img1, 50);
+            anim.addFrame(img1, 150);
             //Up anim state
-            anim.addFrame(img2, 50);
-            //Normal state
-            anim.addFrame(img1, 50);
+            anim.addFrame(img2, 150);
             //down anim state
-            anim.addFrame(img3, 50);
+            anim.addFrame(img3, 150);
             return anim;
         }
     //TODO Create animation sequence for creature
